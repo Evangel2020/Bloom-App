@@ -1,2 +1,2 @@
 # Bloom-App
-This app is for pregnant women.
+This app is for pregnant women and children.
