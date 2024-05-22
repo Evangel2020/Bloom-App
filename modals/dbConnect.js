@@ -2,11 +2,19 @@ const mysql = require('mysql2');
 
 const poolConnect = mysql.createPool(
     {   connectionLimit: 10, 
-        host: "bbh1iksljjxbrsechhmh-mysql.services.clever-cloud.com", 
-        password: "yI0loYo0SDwlHeAJBbs9", 
-        user: "ungmszsdi45grwm6", 
-        database:"bbh1iksljjxbrsechhmh"
+        host: "localhost", 
+        password: "", 
+        user: "root", 
+        database:"bloom"
      });
+
+// const poolConnect = mysql.createPool(
+//     {   connectionLimit: 10, 
+//         host: "bbh1iksljjxbrsechhmh-mysql.services.clever-cloud.com", 
+//         password: "yI0loYo0SDwlHeAJBbs9", 
+//         user: "ungmszsdi45grwm6", 
+//         database:"bbh1iksljjxbrsechhmh"
+//      });
      
      
 
@@ -35,7 +43,7 @@ const poolConnect = mysql.createPool(
     }
 
 
-    const signUpSyntax = "insert into userSignIn(email,phoneNumber,password,otp)values(?,?,?,?)";
+    const signUpSyntax = "insert into userSignIn(email,phoneNumber,password, otp, otpExpiry)values(?,?,?, ?, ?)";
     const loginSyntax = 'SELECT * FROM userSignIn WHERE email = ?';
     //const resetLoginSyntax = "update siginCrendentials set password = ? where email = ?"
    
